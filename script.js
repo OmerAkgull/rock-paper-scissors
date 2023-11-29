@@ -18,7 +18,7 @@ function playRound(playerSelection, computerSelection) {
   ) {
     return "You win! Rock beats scissors.";
   } else {
-    playRound(playerSelection, computerSelection);
+    playRound(playerSelectionFixed, getComputerChoice());
   }
 }
 
