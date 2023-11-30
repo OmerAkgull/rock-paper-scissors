@@ -6,7 +6,7 @@ function getComputerChoice() {
 }
 
 const computerSelection = getComputerChoice();
-const playerSelection = "rock";
+const playerSelection = prompt("Rock, paper, or scissors?");
 const playerSelectionFixed = playerSelection.toLowerCase();
 
 function playRound(playerSelection, computerSelection) {
