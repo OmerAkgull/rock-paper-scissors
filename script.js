@@ -6,11 +6,12 @@ function getComputerChoice() {
 }
 
 const computerSelection = getComputerChoice();
-const playerSelection = prompt("Rock, paper, or scissors?");
-const playerSelectionFixed = playerSelection.toLowerCase();
+const playerSelectionPrompt = prompt("Rock, paper, or scissors?");
 
 function playRound(playerSelection, computerSelection) {
-  console.log("Player:", playerSelection, "Computer:", computerSelection);
+
+    console.log("Player:", playerSelection, "Computer:", computerSelection);
+    const playerSelectionPrompt = prompt("Rock, paper, or scissors?");
 
   const winMessage = `You win! ${playerSelection} beats ${computerSelection}`;
   const loseMessage =  `You lose! ${computerSelection} beats ${playerSelection}`;
@@ -41,8 +42,15 @@ function playRound(playerSelection, computerSelection) {
   ) {
     return winMessage;
   } else {
-    playRound(playerSelectionFixed, getComputerChoice());
+    playRound(playerSelectionPrompt, getComputerChoice());
   }
 }
 
-console.log(playRound(playerSelectionFixed, computerSelection));
+
+function game() {
+  for (let i = 0; i<5; i++) {
+    playRound(playerSelectionPrompt, computerSelection);
+  }
+};
+
+console.log(game());
