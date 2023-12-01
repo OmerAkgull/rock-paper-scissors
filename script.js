@@ -9,9 +9,9 @@ const computerSelection = getComputerChoice();
 const playerSelectionPrompt = prompt("Rock, paper, or scissors?");
 
 function playRound(playerSelection, computerSelection) {
-
+  const playerSelectionPrompt = prompt("Rock, paper, or scissors?");
     console.log("Player:", playerSelection, "Computer:", computerSelection);
-    const playerSelectionPrompt = prompt("Rock, paper, or scissors?");
+
 
   const winMessage = `You win! ${playerSelection} beats ${computerSelection}`;
   const loseMessage =  `You lose! ${computerSelection} beats ${playerSelection}`;
