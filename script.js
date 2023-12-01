@@ -12,33 +12,37 @@ const playerSelectionFixed = playerSelection.toLowerCase();
 function playRound(playerSelection, computerSelection) {
   console.log("Player:", playerSelection, "Computer:", computerSelection);
 
+  const winMessage = `You win! ${playerSelection} beats ${computerSelection}`;
+  const loseMessage =  `You lose! ${computerSelection} beats ${playerSelection}`;
+  const tieMessage = "It's a tie, go again!"
+
   if ((computerSelection === "paper") & (playerSelection === "rock")) {
-    return "You lose! Paper beats rock.";
+    return loseMessage;
   } else if (
     (computerSelection === "scissors") &
     (playerSelection === "rock")
   ) {
-    return "You win! Rock beats scissors.";
+    return winMessage;
   } else if (
     (computerSelection === "scissors") &
     (playerSelection === "paper")
   ) {
-    return "You lose! Scissors beats paper.";
+    return loseMessage;
   } else if ((computerSelection === "rock") & (playerSelection === "paper")) {
-    return "You win! Paper beats rock.";
+    return loseMessage;
   } else if (
     (computerSelection === "rock") &
     (playerSelection === "scissors")
   ) {
-    return "You lose! Rock beats scissors.";
+    return loseMessage;
   } else if (
     (computerSelection === "paper") &
     (playerSelection === "scissors")
   ) {
-    return "You win! Scissors beats paper.";
+    return winMessage;
   } else {
     playRound(playerSelectionFixed, getComputerChoice());
   }
 }
 
-playRound(playerSelectionFixed, computerSelection);
+console.log(playRound(playerSelectionFixed, computerSelection));
