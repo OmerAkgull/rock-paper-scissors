@@ -51,7 +51,10 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    let playerSelectionPrompt = prompt("Rock, paper, or scissors?");
+    if (playerScore === 3 || computerScore === 3){
+      break;
+     }
+    let playerSelectionPrompt = prompt("Rock, paper, or scissors?");   
     playRound(playerSelectionPrompt, getComputerChoice());
   }
   if (playerScore > computerScore) {
