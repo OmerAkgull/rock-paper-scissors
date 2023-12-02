@@ -6,51 +6,68 @@ function getComputerChoice() {
 }
 
 const computerSelection = getComputerChoice();
-const playerSelectionPrompt = prompt("Rock, paper, or scissors?");
+
+let playerScore = 0;
+let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
-  const playerSelectionPrompt = prompt("Rock, paper, or scissors?");
-    console.log("Player:", playerSelection, "Computer:", computerSelection);
-
+  playerSelection = playerSelection.toLowerCase();
+  console.log("Player:", playerSelection, "Computer:", computerSelection);
 
   const winMessage = `You win! ${playerSelection} beats ${computerSelection}`;
-  const loseMessage =  `You lose! ${computerSelection} beats ${playerSelection}`;
-  const tieMessage = "It's a tie, go again!"
+  const loseMessage = `You lose! ${computerSelection} beats ${playerSelection}`;
+  const tieMessage = "It's a tie, go again!";
 
-  if ((computerSelection === "paper") & (playerSelection === "rock")) {
-    return loseMessage;
-  } else if (
-    (computerSelection === "scissors") &
-    (playerSelection === "rock")
-  ) {
-    return winMessage;
-  } else if (
-    (computerSelection === "scissors") &
-    (playerSelection === "paper")
-  ) {
-    return loseMessage;
-  } else if ((computerSelection === "rock") & (playerSelection === "paper")) {
-    return loseMessage;
-  } else if (
-    (computerSelection === "rock") &
-    (playerSelection === "scissors")
-  ) {
-    return loseMessage;
-  } else if (
-    (computerSelection === "paper") &
-    (playerSelection === "scissors")
-  ) {
-    return winMessage;
-  } else {
+  if (playerSelection === computerSelection) {
+    console.log(tieMessage);
+    playerSelectionPrompt = prompt("Rock, paper, or scissors?");
     playRound(playerSelectionPrompt, getComputerChoice());
+  } else if (playerSelection === "rock") {
+    if (computerSelection === "paper") {
+      console.log(loseMessage);
+      computerScore++;
+    } else {
+      console.log(winMessage);
+      playerScore++;
+    }
+  } else if (playerSelection === "paper") {
+    if (computerSelection === "scissors") {
+      console.log(loseMessage);
+      computerScore++;
+    } else {
+      console.log(winMessage);
+      playerScore++;
+    }
+  } else {
+    if (computerSelection === "rock") {
+      console.log(loseMessage);
+      computerScore++;
+    } else {
+      console.log(winMessage);
+      playerScore++;
+    }
   }
 }
 
-
 function game() {
-  for (let i = 0; i<5; i++) {
-    playRound(playerSelectionPrompt, computerSelection);
+  for (let i = 0; i < 5; i++) {
+    let playerSelectionPrompt = prompt("Rock, paper, or scissors?");
+    playRound(playerSelectionPrompt, getComputerChoice());
   }
-};
+  if (playerScore > computerScore) {
+    console.log(
+      `You win this best of 5 with a score of ${playerScore} - ${computerScore}! Congrats!`
+    );
+  } else {
+    console.log(
+      "You lose this best of 5 with a score of " +
+        computerScore +
+        " -" +
+        playerScore +
+        " ! Try again!"
+    );
+  }
+}
 
-console.log(game());
+game();
+
