@@ -11,6 +11,7 @@ const scissors = document.querySelector("#btnScissors");
 const gameEnd = document.querySelector(".gameEnd");
 const winnerText = document.querySelector(".winner");
 const buttonEnd = document.querySelector(".buttonEnd");
+const endText = document.querySelector("#endText");
 
 let playerScore = 0;
 let computerScore = 0;
@@ -57,6 +58,9 @@ function playRound(playerSelection, computerSelection) {
   if (playerScore === 5 || computerScore === 5) {
     if (playerScore > computerScore) {
       results.textContent = `You win this round with a score of ${playerScore} - ${computerScore}! Congrats!`;
+      winnerText.style.color = "green";
+      buttonEnd.style.color = "green";
+      endText.style.color = "green";
     } else {
       results.textContent =
         "You lose this best of 5 with a score of " +
