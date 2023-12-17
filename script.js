@@ -11,6 +11,7 @@ const scissors = document.querySelector("#btnScissors");
 
 let playerScore = 0;
 let computerScore = 0;
+let results = document.querySelector(".result-box");
 
 function playRound(playerSelection, computerSelection) {
   console.log("Player:", playerSelection, "Computer:", computerSelection);
@@ -20,31 +21,31 @@ function playRound(playerSelection, computerSelection) {
   const tieMessage = "It's a tie, go again!";
 
   if (playerSelection === computerSelection) {
-    console.log(tieMessage);
+    results.textContent = tieMessage;
     // playerSelectionPrompt = prompt("Rock, paper, or scissors?");
     // playRound(playerSelectionPrompt, getComputerChoice());
   } else if (playerSelection === "rock") {
     if (computerSelection === "paper") {
-      console.log(loseMessage);
+      results.textContent = loseMessage;
       computerScore++;
     } else {
-      console.log(winMessage);
+      results.textContent = winMessage;
       playerScore++;
     }
   } else if (playerSelection === "paper") {
     if (computerSelection === "scissors") {
-      console.log(loseMessage);
+      results.textContent = loseMessage;
       computerScore++;
     } else {
-      console.log(winMessage);
+      results.textContent = winMessage;
       playerScore++;
     }
   } else {
     if (computerSelection === "rock") {
-      console.log(loseMessage);
+      results.textContent = loseMessage;
       computerScore++;
     } else {
-      console.log(winMessage);
+      results.textContent = winMessage;
       playerScore++;
     }
   }
@@ -74,7 +75,7 @@ refreshButton.addEventListener("click", refreshPage);
 /*
 function game() {
   for (let i = 0; i < 5; i++) {
-    if (playerScore === 3 || computerScore === 3){
+    if (playerScore === 5 || computerScore === 5){
       break;
      }
     let playerSelectionPrompt = prompt("Rock, paper, or scissors?");   
