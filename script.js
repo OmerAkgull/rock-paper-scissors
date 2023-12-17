@@ -8,6 +8,9 @@ function getComputerChoice() {
 const rock = document.querySelector("#btnRock");
 const paper = document.querySelector("#btnPaper");
 const scissors = document.querySelector("#btnScissors");
+const gameEnd = document.querySelector(".gameEnd");
+const winnerText = document.querySelector(".winner");
+const buttonEnd = document.querySelector(".buttonEnd");
 
 let playerScore = 0;
 let computerScore = 0;
@@ -20,17 +23,12 @@ let results = document.querySelector(".result-box");
 function playRound(playerSelection, computerSelection) {
   console.log("Player:", playerSelection, "Computer:", computerSelection);
 
-  playerScoreBox.textContent = playerScore;
-  computerScoreBox.textContent = computerScore;
-
   const winMessage = `You win! ${playerSelection} beats ${computerSelection}`;
   const loseMessage = `You lose! ${computerSelection} beats ${playerSelection}`;
   const tieMessage = "It's a tie, go again!";
 
   if (playerSelection === computerSelection) {
     results.textContent = tieMessage;
-    // playerSelectionPrompt = prompt("Rock, paper, or scissors?");
-    // playRound(playerSelectionPrompt, getComputerChoice());
   } else if (playerSelection === "rock") {
     if (computerSelection === "paper") {
       results.textContent = loseMessage;
@@ -56,6 +54,26 @@ function playRound(playerSelection, computerSelection) {
       playerScore++;
     }
   }
+  if (playerScore === 5 || computerScore === 5) {
+    if (playerScore > computerScore) {
+      results.textContent = `You win this round with a score of ${playerScore} - ${computerScore}! Congrats!`;
+    } else {
+      results.textContent =
+        "You lose this best of 5 with a score of " +
+        computerScore +
+        " -" +
+        playerScore +
+        " ! Try again!";
+    }
+  }
+  playerScoreBox.textContent = playerScore;
+  computerScoreBox.textContent = computerScore;
+  if (playerScore === 5 || computerScore === 5) {
+    gameEnd.style.display = "flex";
+    winnerText.textContent =
+      playerScore === 5 ? "Player Wins! Congratulations!" : "Computer Wins! You can try again!";
+    body;
+  }
 }
 
 paper.addEventListener("click", () => {
@@ -74,33 +92,5 @@ const refreshPage = () => {
   location.reload();
 };
 
-const refreshButton = document.querySelector("#playAgain");
-refreshButton.addEventListener("click", refreshPage);
+buttonEnd.addEventListener("click", refreshPage);
 
-/*
-function game() {
-  for (let i = 0; i < 5; i++) {
-    if (playerScore === 5 || computerScore === 5){
-      break;
-     }
-    let playerSelectionPrompt = prompt("Rock, paper, or scissors?");   
-    playRound(playerSelectionPrompt, getComputerChoice());
-  }
-  if (playerScore > computerScore) {
-    console.log(
-      `You win this best of 5 with a score of ${playerScore} - ${computerScore}! Congrats!`
-    );
-  } else {
-    console.log(
-      "You lose this best of 5 with a score of " +
-        computerScore +
-        " -" +
-        playerScore +
-        " ! Try again!"
-    );
-  }
-}
-
-game();
-
-*/

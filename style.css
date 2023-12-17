@@ -43,7 +43,7 @@ h1,
 h2,
 h3,
 h4 {
-    text-align: center;
+  text-align: center;
 }
 
 h1 {
@@ -53,89 +53,118 @@ h1 {
 }
 
 h2 {
-    font-size: 3rem;
-    margin-top: 15px;
+  font-size: 3rem;
+  margin-top: 15px;
 }
 
 h3 {
-    font-size:2.5rem;
-    margin-top: 15px;
+  font-size: 2.5rem;
+  margin-top: 15px;
 }
 
 h4 {
-    font-size: 2rem;
-    margin-top: 15px;
+  font-size: 2rem;
+  margin-top: 15px;
 }
 
 .button-container {
-    gap: 75px;
-    margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  gap: 75px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .button-container button {
-    font-size: 2rem;
-    padding: 1rem 2rem;
+  font-size: 2rem;
+  padding: 1rem 2rem;
 }
 
 .scores-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
 }
 
 .player-score,
 .computer-score {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 p {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .box {
-    border: 5px solid black;
-    width: 300px;
-    height: 100px;
+  border: 5px solid black;
+  width: 300px;
+  height: 100px;
 }
 
-.result-container,
-.button-two {
-    display: flex;
-    justify-content: center;
+.result-container {
+  display: flex;
+  justify-content: center;
 }
 
 .box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: underline;
-    font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;
+  font-size: 2rem;
 }
 
 .result-box {
-    width: 500px;
-    height: 100px;
-    border: 5px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.7rem;
+  width: 500px;
+  height: 100px;
+  border: 5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
 }
 
-.button-two {
-    margin-top: 30px;
-}
 
-.button-two button {
-    padding: 1rem 1.5rem;
-    font-size: 1.4rem;
+.gameEnd {
+  background-color: #0005;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  display: none;
+}
+.gameEnd h1 {
+  background-color: bisque;
+  border: 10px solid #000;
+  border-radius: 10px;
+  color: red;
+  padding: 1rem;
+  text-align: center;
+}
+.gameEnd h3 {
+  background-color: bisque;
+  border: 10px solid #000;
+  border-radius: 10px;
+  color: red;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 55px;
+}
+.buttonEnd {
+  background-color: bisque;
+  border: 5px solid #000;
+  border-radius: 10px;
+  color: red;
+  text-align: center;
+  font-size: 25px;
+  padding: 30px 45px 30px 45px;
 }
 
