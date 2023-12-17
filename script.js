@@ -22,7 +22,6 @@ let computerScoreBox = document.querySelector("#computerScore");
 let results = document.querySelector(".result-box");
 
 function playRound(playerSelection, computerSelection) {
-  console.log("Player:", playerSelection, "Computer:", computerSelection);
 
   const winMessage = `You win! ${playerSelection} beats ${computerSelection}`;
   const loseMessage = `You lose! ${computerSelection} beats ${playerSelection}`;
