@@ -62,6 +62,15 @@ scissors.addEventListener("click", () => {
   playRound("scissors", getComputerChoice());
 });
 
+
+const refreshPage = () => {
+  location.reload();
+};
+
+const refreshButton = document.querySelector("#playAgain");
+refreshButton.addEventListener("click", refreshPage);
+
+
 /*
 function game() {
   for (let i = 0; i < 5; i++) {
