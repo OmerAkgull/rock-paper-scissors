@@ -5,13 +5,14 @@ function getComputerChoice() {
   return choice;
 }
 
-const computerSelection = getComputerChoice();
+const rock = document.querySelector("#btnRock");
+const paper = document.querySelector("#btnPaper");
+const scissors = document.querySelector("#btnScissors");
 
 let playerScore = 0;
 let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
-  playerSelection = playerSelection.toLowerCase();
   console.log("Player:", playerSelection, "Computer:", computerSelection);
 
   const winMessage = `You win! ${playerSelection} beats ${computerSelection}`;
@@ -20,8 +21,8 @@ function playRound(playerSelection, computerSelection) {
 
   if (playerSelection === computerSelection) {
     console.log(tieMessage);
-    playerSelectionPrompt = prompt("Rock, paper, or scissors?");
-    playRound(playerSelectionPrompt, getComputerChoice());
+    // playerSelectionPrompt = prompt("Rock, paper, or scissors?");
+    // playRound(playerSelectionPrompt, getComputerChoice());
   } else if (playerSelection === "rock") {
     if (computerSelection === "paper") {
       console.log(loseMessage);
@@ -49,6 +50,17 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+paper.addEventListener("click", () => {
+  playRound("paper", getComputerChoice());
+});
+
+rock.addEventListener("click", () => {
+  playRound("rock", getComputerChoice());
+});
+
+scissors.addEventListener("click", () => {
+  playRound("scissors", getComputerChoice());
+});
 
 /*
 function game() {
