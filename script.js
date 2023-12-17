@@ -11,10 +11,17 @@ const scissors = document.querySelector("#btnScissors");
 
 let playerScore = 0;
 let computerScore = 0;
+
+let playerScoreBox = document.querySelector("#playerScore");
+let computerScoreBox = document.querySelector("#computerScore");
+
 let results = document.querySelector(".result-box");
 
 function playRound(playerSelection, computerSelection) {
   console.log("Player:", playerSelection, "Computer:", computerSelection);
+
+  playerScoreBox.textContent = playerScore;
+  computerScoreBox.textContent = computerScore;
 
   const winMessage = `You win! ${playerSelection} beats ${computerSelection}`;
   const loseMessage = `You lose! ${computerSelection} beats ${playerSelection}`;
@@ -63,14 +70,12 @@ scissors.addEventListener("click", () => {
   playRound("scissors", getComputerChoice());
 });
 
-
 const refreshPage = () => {
   location.reload();
 };
 
 const refreshButton = document.querySelector("#playAgain");
 refreshButton.addEventListener("click", refreshPage);
-
 
 /*
 function game() {

@@ -112,6 +112,14 @@ p {
     justify-content: center;
 }
 
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    font-size: 2rem;
+}
+
 .result-box {
     width: 500px;
     height: 100px;
