@@ -167,6 +167,7 @@ p {
   text-align: center;
   font-size: 25px;
   padding: 30px 45px 30px 45px;
+  cursor: pointer;
 }
 
 .rock {
